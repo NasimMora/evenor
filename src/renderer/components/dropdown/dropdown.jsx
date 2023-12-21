@@ -8,7 +8,6 @@ export function Dropdown({
   menuItems,
 }) {
   const [opened, setOpened] = useState(false);
-
   function onOpen() {
     setOpened(!opened);
   }

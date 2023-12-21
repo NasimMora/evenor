@@ -48,29 +48,7 @@ export function Header() {
     setRepoUUID('root');
   }
 
-  useEffect(() => {
-    // eslint-disable-next-line
-    if (isInitialized && __BUILD_MODE__ !== 'electron') {
-      const searchParams = queriesToParams(queries);
 
-      // if (groupBy !== '') {
-      //   searchParams.set('.group', groupBy);
-      // }
-
-      // searchParams.set('.overview', overviewType);
-
-      const pathname = repoName === undefined ? '/' : `/${repoName}`;
-
-      navigate({
-        pathname,
-        search: `?${searchParams.toString()}`,
-      });
-    }
-  }, [queries, groupBy, overviewType, repoName]);
-
-  useEffect(() => {
-    onQueries();
-  }, [queries, repoUUID]);
 
   return (
     <header className={styles.header}>

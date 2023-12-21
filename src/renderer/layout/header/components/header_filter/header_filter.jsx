@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FilterSearchBar, FilterQueryList } from './components/index.js';
+import { FilterSearchBar, FilterQueryList, FilterQueryListNew, FilterQueryPlus } from './components/index.js';
 import styles from './header_filter.module.css';
 
 export function HeaderFilter() {
@@ -17,15 +17,12 @@ export function HeaderFilter() {
 
   return (
     <div className={styles.panel}>
-      <FilterSearchBar {...{
-        queryBranch,
-        onQuerySelect,
+      <FilterQueryListNew {...{
         queryValue,
         onQueryInput,
       }}
       />
-
-      <FilterQueryList {...{ onQuerySelect }} />
+			<FilterQueryPlus/>
     </div>
   );
 }
